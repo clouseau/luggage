@@ -1,3 +1,7 @@
 #!/bin/bash
 
-../../scripts/build_luggage.sh
+# run before assemble
+/usr/libexec/s2i/assemble
+# run after assemble
+pwd
+./scripts/build_luggage.sh
