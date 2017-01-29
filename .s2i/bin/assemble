@@ -4,4 +4,4 @@
 /usr/libexec/s2i/assemble
 # run after assemble
 pwd
-./scripts/build_luggage.sh
+#./scripts/build_luggage.sh
