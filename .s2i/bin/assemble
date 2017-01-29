@@ -11,7 +11,7 @@ curl https://getcomposer.org/installer | php
 
 # Install App dependencies using Composer
 ./composer.phar global require drush/drush --no-interaction --no-ansi --optimize-autoloader
-PATH=".composer/vendor/bin:$PATH"
+PATH="./.composer/vendor/bin:$PATH"
 
 # Fix source directory permissions
 fix-permissions ./
