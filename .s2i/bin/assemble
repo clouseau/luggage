@@ -1,7 +1,18 @@
 #!/bin/bash
 
-# run before assemble
-/usr/libexec/s2i/assemble
-# run after assemble
-pwd
-#./scripts/build_luggage.sh
+set -e
+
+shopt -s dotglob
+echo "---> Installing application source..."
+mv /tmp/src/* ./
+
+# Install Composer
+curl https://getcomposer.org/installer | php
+
+# Install App dependencies using Composer
+./composer.phar global require drush/drush --no-interaction --no-ansi --optimize-autoloader
+mkdir bin
+ln -s ./.composer/vendor/drush/drush/drush bin/drush
+
+# Fix source directory permissions
+fix-permissions ./
