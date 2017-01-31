@@ -5,6 +5,8 @@ set -e
 shopt -s dotglob
 pwd
 ls -lR
+echo '/tmp/src :'
+ls -lR /tmp/src
 echo "---> Installing application source..."
 
 php -r "readfile('http://files.drush.org/drush.phar');" > ./bin/drush
