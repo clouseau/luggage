@@ -3,11 +3,12 @@
 set -e
 
 shopt -s dotglob
+pwd
+ls -lR
 echo "---> Installing application source..."
-mkdir /tmp/src/bin
 
-php -r "readfile('http://files.drush.org/drush.phar');" > /tmp/src/bin/drush
-chmod +x /tmp/src/bin/drush
+php -r "readfile('http://files.drush.org/drush.phar');" > ./bin/drush
+chmod +x ./bin/drush
 mv /tmp/src/* ./
 
 # Install Composer
